@@ -1,0 +1,541 @@
+/* Reset dan body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Umum */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Papan Iklan */
+.banner {
+    background-color: #2e7d32; /* Hijau */
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+/* Style dasar untuk navbar */
+.navbar {
+/* Styling untuk navbar */
+.navbar {
+  background-color: #ffffff; /* Latar belakang putih */
+  padding: 20px 0; /* Meningkatkan padding untuk tampilan lebih luas */
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;/* Membuat navbar dapat di-scroll secara horizontal */
+  border-radius: 0; /* Sudut persegi tanpa radius */
+}
+
+/* Style untuk menu */
+.menu {
+  display: flex;
+  gap: 40px; /* Spasi antar menu diperbesar untuk tampilan lebih lega */
+  list-style-type: none;
+  padding: 0 30px;
+  margin: 0;
+  overflow-x: scroll; /* Scrollbar horizontal */
+  overflow-y: hidden;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  color: #7b8b8e; /* Warna teks lebih lembut (abu-abu kebiruan) */
+  text-decoration: none; /* Menghapus garis bawah */
+  font-size: 18px; /* Ukuran font lebih besar */
+  font-weight: 500; /* Berat font yang sedikit lebih tebal */
+  padding: 15px 25px; /* Menambah padding untuk memperbesar ukuran tombol */
+  border-radius: 30px; /* Sudut lebih bulat */
+  background-color: transparent; /* Awalnya transparan */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transisi hover dan klik */
+}
+
+.menu-item a:hover {
+  background-color: #f9f9f9; /* Latar belakang abu-abu sangat terang saat hover */
+  color: #34495e; /* Warna teks lebih gelap saat hover */
+  transform: translateY(-3px); /* Efek naik sedikit saat hover */
+}
+
+/* Efek klik menu (active) */
+.menu-item a:active {
+  transform: translateY(1px); /* Menurunkan posisi sedikit saat klik */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan box-shadow saat menu diklik */
+}
+
+/* Scrollbar Styling */
+.navbar::-webkit-scrollbar {
+  height: 8px; /* Ketebalan scrollbar horizontal */
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background-color: #dcdcdc; /* Warna scrollbar abu-abu terang */
+  border-radius: 10px; /* Membuat scroll lebih halus */
+  border: none; /* Menghilangkan garis atau outline */
+}
+
+.navbar::-webkit-scrollbar-thumb:hover {
+  background-color: #b0b0b0; /* Warna lebih gelap saat hover */
+}
+
+.navbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track scrollbar lebih terang */
+}
+
+/* Menu terakhir (Team) dengan warna khusus */
+.menu-item:last-child a {
+  background-color: #a8d5ba; /* Warna hijau pastel */
+  color: #ffffff; /* Teks putih untuk kontras */
+}
+
+/* Responsif untuk HP */
+@media (max-width: 576px) {
+  /* Mengurangi ukuran font dan padding untuk layar kecil */
+  .menu-item a {
+    font-size: 16px; /* Ukuran font lebih kecil untuk HP */
+    padding: 12px 20px; /* Padding lebih kecil */
+  }
+
+  .menu {
+    gap: 20px; /* Mengurangi jarak antar item menu pada layar kecil */
+    padding: 0 10px; /* Mengurangi padding pada menu */
+  }
+}
+
+/* Responsif untuk Desktop (lebih besar dari 576px) */
+@media (min-width: 576px) {
+  /* Ukuran font lebih besar untuk desktop */
+  .menu-item a {
+    font-size: 18px; /* Ukuran font sedikit lebih besar */
+    padding: 15px 25px; /* Padding lebih besar */
+  }
+
+  .menu {
+    gap: 40px; /* Spasi antar item menu lebih besar */
+    padding: 0 30px; /* Padding lebih besar */
+  }
+}
+
+.menu-item:last-child a:hover {
+  background-color: #88c3a3; /* Warna lebih gelap saat hover */
+  color: #ffffff; /* Teks tetap putih saat hover */
+}
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Memindahkan Hamburger dan Logo untuk Mobile */
+    .navbar .logo {
+        margin-left: 0;  /* Logo di sebelah kanan di mobile */
+        text-align: left; /* Logo di kiri di mobile */
+    }
+
+    .nav-links li {
+        font-size: 1.2rem;
+    }
+}
+
+/* Menu Desktop */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        justify-content: flex-start;  /* Mengatur menu links ke kiri */
+    }
+
+    .hamburger {
+        display: none;  /* Sembunyikan hamburger di desktop */
+    }
+}
+
+/* Banner Section */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    padding: 0;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-banner .banner-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2e7d32; /* Hijau */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero-banner .banner-button:hover {
+    background-color: #1b5e20; /* Hijau lebih gelap */
+}
+.cart {
+  display: flex;
+  overflow-x: auto; /* Membuat scrollbar horizontal */
+  padding: 20px;
+  gap: 15px; /* Spasi antar item */
+  justify-content: center; /* Menyelaraskan item di tengah */
+  background-color: #f4f4f4; /* Latar belakang untuk menonjolkan item */
+  border-radius: 10px; /* Membuat sudut lebih lembut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan shadow pada kontainer */
+}
+
+.cart-item {
+  width: 300px; /* Lebar item */
+  flex-shrink: 0; /* Mencegah item mengecil */
+  background-color: #fff; /* Latar belakang putih untuk item */
+  border-radius: 10px; /* Membuat sudut item melengkung */
+  overflow: hidden; /* Menjaga gambar agar tidak keluar dari batas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow pada item */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi transisi */
+}
+
+.cart-item:hover {
+  transform: scale(1.05); /* Memperbesar sedikit saat hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+.cart-item img {
+  width: 100%;
+  height: 200px; /* Atur tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-bottom: 2px solid #ddd; /* Garis bawah pemisah */
+}
+
+.cart::-webkit-scrollbar {
+  height: 8px; /* Ketebalan scrollbar */
+}
+
+.cart::-webkit-scrollbar-thumb {
+  background-color: #888; /* Warna scroll */
+  border-radius: 10px;
+}
+
+.cart::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Warna scroll saat hover */
+}
+.cart {
+  display: flex;
+  overflow-x: auto; /* Membuat scrollbar horizontal */
+  padding: 20px;
+  gap: 15px; /* Spasi antar item */
+  justify-content: flex-start; /* Menyelaraskan item ke kiri */
+  background-color: #f4f4f4; /* Latar belakang untuk menonjolkan item */
+  border-radius: 10px; /* Membuat sudut lebih lembut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan shadow pada kontainer */
+  scrollbar-width: thin; /* Memberikan lebar scrollbar tipis */
+}
+
+.cart-item {
+  width: 300px; /* Lebar item */
+  flex-shrink: 0; /* Mencegah item mengecil */
+  background-color: #fff; /* Latar belakang putih untuk item */
+  border-radius: 10px; /* Membuat sudut item melengkung */
+  overflow: hidden; /* Menjaga gambar agar tidak keluar dari batas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow pada item */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animasi transisi */
+}
+
+.cart-item:hover {
+  transform: scale(1.05); /* Memperbesar sedikit saat hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow lebih besar saat hover */
+}
+
+.cart-item img {
+  width: 100%;
+  height: 200px; /* Atur tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-bottom: 2px solid #ddd; /* Garis bawah pemisah */
+}
+
+.cart::-webkit-scrollbar {
+  height: 8px; /* Ketebalan scrollbar */
+}
+
+.cart::-webkit-scrollbar-thumb {
+  background-color: #888; /* Warna scroll */
+  border-radius: 10px;
+}
+
+.cart::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Warna scroll saat hover */
+}
+/* Section Produk */
+.products {
+    margin-bottom: 20px; /* Mengurangi jarak bawah antara dua section produk */
+}
+/* Product Container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Memusatkan produk */
+    gap: 15px; /* Mengatur jarak antar card produk */
+    margin: 0; /* Menghapus margin tambahan */
+}
+
+
+/* Produk Card */
+.product-card {
+    flex-shrink: 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px;
+    scroll-snap-align: center;
+    position: relative;
+    margin-bottom: 20px; /* Memberikan jarak antar produk card */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+.product-card h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-card .product-price {
+    font-size: 1.4rem;
+    color: #333;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    text-align: left;
+}
+
+.product-card button {
+    padding: 12px 30px;
+    background-color: #88c3a3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.product-card button:hover {
+    background-color: #a8d5ba;
+    transform: scale(1.05);
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .product-card {
+        width: 180px;
+        padding: 15px;
+    }
+
+    .product-card img {
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+    .product-card p {
+        font-size: 1.1rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .product-card .product-price {
+        font-size: 1.2rem;
+    }
+
+    .product-card button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsif untuk perangkat besar */
+@media (min-width: 1200px) {
+    .product-container {
+        gap: 30px;
+    }
+
+    .product-card {
+        width: 240px;
+        padding: 20px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .product-card p {
+        font-size: 1.4rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .product-card .product-price {
+        font-size: 1.5rem;
+    }
+
+    .product-card button {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsif untuk Layar Kecil */
+@media (max-width: 768px) {
+    .product-container {
+        gap: 15px;
+    }
+
+    .product-card {
+        width: 160px; /* Adjust card size for mobile */
+    }
+}
+  /* Atur tinggi minimum carousel untuk ponsel dan desktop */
+  .carousel-inner img {
+    height: auto; /* Gambar menyesuaikan proporsi */
+    max-height: 600px; /* Batas tinggi gambar pada desktop */
+    object-fit: cover; /* Mengisi area tanpa merusak proporsi */
+  }
+
+  /* Sesuaikan teks dan tombol */
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Background semi-transparan */
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Responsif untuk layar kecil */
+  @media (max-width: 768px) {
+    .carousel-caption h5 {
+      font-size: 18px;
+    }
+    .carousel-caption p {
+      font-size: 14px;
+    }
+    .carousel-inner img {
+      max-height: 300px; /* Gambar lebih kecil pada ponsel */
+    }
+  }
+.navbar-brand {
+  color: #a8d5ba; /* Hijau muda banget */
+  font-weight: bold;
+  font-size: 1.5rem; /* Ukuran font lebih besar */
+  text-transform: uppercase; /* Huruf kapital */
+  letter-spacing: 1px; /* Spasi antar huruf */
+  padding-left: 10px; /* Geser teks ke kiri */
+}
+
+.navbar-brand:hover {
+  color: #88c3a3; /* Hijau lebih tua saat hover */
+  text-decoration: none; /* Menghapus garis bawah */
+}
+/* Default styling untuk tombol hamburger */
+.navbar-toggler {
+  border: none;
+  background-color: #e0e0e0; /* Warna putih abu */
+  border-radius: 4px; /* Membuat tombol berbentuk kotak */
+  padding: 8px; /* Padding untuk mengatur ukuran */
+  position: absolute;
+  top: 20px; /* Turunkan posisi tombol */
+  right: 10px; /* Kekanan */
+  z-index: 1050;
+  width: 50px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+}
+
+/* Ukuran ikon hamburger */
+.navbar-toggler-icon {
+  width: 25px; /* Ukuran ikon */
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 576px) {
+  .navbar-toggler {
+    width: 45px; /* Lebar tombol lebih kecil untuk HP */
+    height: 35px; /* Tinggi tombol lebih kecil untuk HP */
+    padding: 6px; /* Padding lebih kecil */
+    top: 15px; /* Turunkan posisi tombol sedikit */
+    right: 5px; /* Sedikit lebih ke kanan */
+  }
+
+  .navbar-toggler-icon {
+    width: 20px; /* Ukuran ikon lebih kecil */
+    height: 16px;
+  }
+}
