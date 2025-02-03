@@ -539,3 +539,23 @@ body {
     height: 16px;
   }
 }
+
+
+.product-card .buy-section {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ justify-content: space-between;
+}
+
+.product-card .title-product {
+ font-size: 16px;
+ color: black;
+ line-height: 15px;
+ text-align: start;
+}
+
+.product-card .buy-section .price {
+ height: 10px;
+ text-align: center;
+}
